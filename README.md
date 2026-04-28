@@ -18,8 +18,8 @@ Latest installers live on the **[Releases page](https://github.com/lionroseway/c
 | macOS (Intel) | `CodeTrellis-<version>-x64.dmg` | Drag to /Applications |
 | Windows installer | `CodeTrellis-Setup-<version>.exe` | NSIS — installs into Programs |
 | Windows portable | `CodeTrellis-Portable-<version>.exe` | Run anywhere, no install |
-| Linux (.deb) | `CodeTrellis-<version>.deb` | Debian, Ubuntu, Mint |
-| Linux (AppImage) | `CodeTrellis-<version>.AppImage` | Fedora, RHEL, Arch — `chmod +x` then run |
+| Linux AppImage (x64) | `CodeTrellis-<version>.AppImage` | All Linux distros — `chmod +x` then run |
+| Linux AppImage (arm64) | `CodeTrellis-<version>-arm64.AppImage` | ARM Linux — same install |
 
 ### First-launch warnings
 
@@ -29,8 +29,7 @@ won't repeat.
 
 - **macOS**: right-click `CodeTrellis.app` → **Open** → **Open** in the dialog. Or System Settings → Privacy & Security → "Open Anyway".
 - **Windows**: SmartScreen blocks unsigned installers — click **More info** → **Run anyway**.
-- **Linux (.deb)**: `sudo dpkg -i CodeTrellis-<version>.deb`
-- **Linux (AppImage)**: `chmod +x CodeTrellis-<version>.AppImage && ./CodeTrellis-<version>.AppImage`
+- **Linux (AppImage)**: `chmod +x CodeTrellis-<version>.AppImage && ./CodeTrellis-<version>.AppImage`. Works on Debian, Ubuntu, Fedora, RHEL, Arch, and others — no install required.
 
 ## What is CodeTrellis?
 
