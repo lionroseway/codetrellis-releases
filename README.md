@@ -32,6 +32,23 @@ repeat.
 - **Windows** — SmartScreen blocks unsigned installers — click **More info** → **Run anyway**.
 - **Linux** — `chmod +x CodeTrellis-0.1.0.AppImage && ./CodeTrellis-0.1.0.AppImage`. Works on Debian, Ubuntu, Fedora, RHEL, Arch — no install needed.
 
+### Linux AppImage on Ubuntu 24.04+
+
+Ubuntu 24.04 tightened AppArmor's unprivileged user-namespace policy, which breaks Chromium's setuid sandbox in AppImages. If you see:
+
+```
+FATAL:setuid_sandbox_host.cc(...) The SUID sandbox helper binary
+was found, but is not configured correctly.
+```
+
+…the workaround is to launch with `--no-sandbox`:
+
+```bash
+./CodeTrellis-0.1.0.AppImage --no-sandbox
+```
+
+This is the same workaround Cursor, Obsidian, and most other Electron AppImages use on modern Linux. For a local dev tool loading your own bundled HTML, the practical risk is negligible. **From v0.1.1 onwards** the desktop app does this automatically when launched from an AppImage — so the workaround only applies to v0.1.0.
+
 ---
 
 ## Why I built it
