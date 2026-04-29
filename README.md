@@ -13,12 +13,12 @@
 
 | Platform | File |
 |---|---|
-| **macOS — Apple Silicon** | [`CodeTrellis-0.1.1-arm64.dmg`](https://github.com/lionroseway/codetrellis-releases/releases/latest/download/CodeTrellis-0.1.1-arm64.dmg) |
-| **macOS — Intel** | [`CodeTrellis-0.1.1-x64.dmg`](https://github.com/lionroseway/codetrellis-releases/releases/latest/download/CodeTrellis-0.1.1-x64.dmg) |
-| **Windows — installer** | [`CodeTrellis-Setup-0.1.1.exe`](https://github.com/lionroseway/codetrellis-releases/releases/latest/download/CodeTrellis-Setup-0.1.1.exe) |
-| **Windows — portable** | [`CodeTrellis-Portable-0.1.1.exe`](https://github.com/lionroseway/codetrellis-releases/releases/latest/download/CodeTrellis-Portable-0.1.1.exe) |
-| **Linux — x64** | [`CodeTrellis-0.1.1.AppImage`](https://github.com/lionroseway/codetrellis-releases/releases/latest/download/CodeTrellis-0.1.1.AppImage) |
-| **Linux — ARM** | [`CodeTrellis-0.1.1-arm64.AppImage`](https://github.com/lionroseway/codetrellis-releases/releases/latest/download/CodeTrellis-0.1.1-arm64.AppImage) |
+| **macOS — Apple Silicon** | [`CodeTrellis-0.1.3-arm64.dmg`](https://github.com/lionroseway/codetrellis-releases/releases/latest/download/CodeTrellis-0.1.3-arm64.dmg) |
+| **macOS — Intel** | [`CodeTrellis-0.1.3-x64.dmg`](https://github.com/lionroseway/codetrellis-releases/releases/latest/download/CodeTrellis-0.1.3-x64.dmg) |
+| **Windows — installer** | [`CodeTrellis-Setup-0.1.3.exe`](https://github.com/lionroseway/codetrellis-releases/releases/latest/download/CodeTrellis-Setup-0.1.3.exe) |
+| **Windows — portable** | [`CodeTrellis-Portable-0.1.3.exe`](https://github.com/lionroseway/codetrellis-releases/releases/latest/download/CodeTrellis-Portable-0.1.3.exe) |
+| **Linux — x64** | [`CodeTrellis-0.1.3.AppImage`](https://github.com/lionroseway/codetrellis-releases/releases/latest/download/CodeTrellis-0.1.3.AppImage) |
+| **Linux — ARM** | [`CodeTrellis-0.1.3-arm64.AppImage`](https://github.com/lionroseway/codetrellis-releases/releases/latest/download/CodeTrellis-0.1.3-arm64.AppImage) |
 
 All builds + release notes live on the **[Releases page →](https://github.com/lionroseway/codetrellis-releases/releases/latest)**
 
@@ -30,7 +30,7 @@ repeat.
 
 - **macOS** — right-click `CodeTrellis.app` → **Open** → **Open** in the dialog. If macOS shows **"App is damaged and can't be opened"** instead (newer macOS does this for unsigned apps), drag CodeTrellis.app to /Applications and run `xattr -cr /Applications/CodeTrellis.app` in Terminal once. The DMG isn't actually damaged — verify with `shasum -a 256` against the SHA in the release notes. Same workaround Cursor / Obsidian / etc. use until proper code-signing lands.
 - **Windows** — SmartScreen blocks unsigned installers — click **More info** → **Run anyway**.
-- **Linux** — `chmod +x CodeTrellis-0.1.1.AppImage && ./CodeTrellis-0.1.1.AppImage`. Works on Debian, Ubuntu, Fedora, RHEL, Arch — no install needed.
+- **Linux** — `chmod +x CodeTrellis-0.1.3.AppImage && ./CodeTrellis-0.1.3.AppImage`. Works on Debian, Ubuntu, Fedora, RHEL, Arch — no install needed.
 
 ### Linux AppImage on Ubuntu 24.04+
 
@@ -44,10 +44,10 @@ was found, but is not configured correctly.
 …the workaround is to launch with `--no-sandbox`:
 
 ```bash
-./CodeTrellis-0.1.1.AppImage --no-sandbox
+./CodeTrellis-0.1.3.AppImage --no-sandbox
 ```
 
-This is the same workaround Cursor, Obsidian, and most other Electron AppImages use on modern Linux. For a local dev tool loading your own bundled HTML, the practical risk is negligible. **From v0.1.1 onwards** the desktop app does this automatically when launched from an AppImage — so the workaround only applies to v0.1.0.
+This is the same workaround Cursor, Obsidian, and most other Electron AppImages use on modern Linux. For a local dev tool loading your own bundled HTML, the practical risk is negligible. **From v0.1.3 onwards** the desktop app does this automatically when launched from an AppImage — so the workaround only applies to v0.1.0.
 
 ---
 
