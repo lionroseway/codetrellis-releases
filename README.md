@@ -13,17 +13,20 @@
 
 | Platform | File |
 |---|---|
-| **macOS — Apple Silicon** | [`CodeTrellis-0.1.10-arm64.dmg`](https://github.com/lionroseway/codetrellis-releases/releases/latest/download/CodeTrellis-0.1.10-arm64.dmg) — signed + notarized |
-| **macOS — Intel** | [`CodeTrellis-0.1.10-x64.dmg`](https://github.com/lionroseway/codetrellis-releases/releases/latest/download/CodeTrellis-0.1.10-x64.dmg) — signed + notarized |
-| **Windows — installer** | [`CodeTrellis-Setup-0.1.9.exe`](https://github.com/lionroseway/codetrellis-releases/releases/download/v0.1.9/CodeTrellis-Setup-0.1.9.exe) — v0.1.9 (0.1.10 via CI soon) |
-| **Windows — portable** | [`CodeTrellis-Portable-0.1.9.exe`](https://github.com/lionroseway/codetrellis-releases/releases/download/v0.1.9/CodeTrellis-Portable-0.1.9.exe) — v0.1.9 (0.1.10 via CI soon) |
-| **Linux — x64** | [`CodeTrellis-0.1.9.AppImage`](https://github.com/lionroseway/codetrellis-releases/releases/download/v0.1.9/CodeTrellis-0.1.9.AppImage) — v0.1.9 (0.1.10 via CI soon) |
+| **macOS — Apple Silicon** | [`CodeTrellis-0.1.11-arm64.dmg`](https://github.com/lionroseway/codetrellis-releases/releases/latest/download/CodeTrellis-0.1.11-arm64.dmg) — signed + notarized |
+| **macOS — Intel** | [`CodeTrellis-0.1.11-x64.dmg`](https://github.com/lionroseway/codetrellis-releases/releases/latest/download/CodeTrellis-0.1.11-x64.dmg) — signed + notarized |
+| **Windows — installer** | [`CodeTrellis-Setup-0.1.9.exe`](https://github.com/lionroseway/codetrellis-releases/releases/download/v0.1.9/CodeTrellis-Setup-0.1.9.exe) — v0.1.9 (0.1.11 via CI soon) |
+| **Windows — portable** | [`CodeTrellis-Portable-0.1.9.exe`](https://github.com/lionroseway/codetrellis-releases/releases/download/v0.1.9/CodeTrellis-Portable-0.1.9.exe) — v0.1.9 (0.1.11 via CI soon) |
+| **Linux — x64** | [`CodeTrellis-0.1.9.AppImage`](https://github.com/lionroseway/codetrellis-releases/releases/download/v0.1.9/CodeTrellis-0.1.9.AppImage) — v0.1.9 (0.1.11 via CI soon) |
 
 All builds + release notes live on the **[Releases page →](https://github.com/lionroseway/codetrellis-releases/releases/latest)**
 
 ### First-launch notes
 
-- **macOS** — **now signed & notarized by Apple** (Developer ID: AILAR Limited), as of v0.1.10. Just open the DMG, drag **CodeTrellis** to Applications, and launch — no Gatekeeper warning and no `xattr` workaround needed.
+- **macOS** — signed & notarized by Apple (Developer ID: AILAR Limited) since v0.1.10, so it should just open: open the DMG, drag **CodeTrellis** to Applications, and launch. **If you still hit a Gatekeeper warning** ("unidentified developer") **or an "app is damaged / can't be opened" message** — which can happen with an older build, or if the download stripped Apple's quarantine attributes — clear the flag once in Terminal and reopen:
+  ```bash
+  xattr -cr /Applications/CodeTrellis.app
+  ```
 - **Windows** — the installer isn't code-signed yet, so SmartScreen may warn once — click **More info** → **Run anyway**.
 - **Linux** — `chmod +x CodeTrellis-0.1.9.AppImage && ./CodeTrellis-0.1.9.AppImage`. Works on Debian, Ubuntu, Fedora, RHEL, Arch — no install needed.
 
