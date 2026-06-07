@@ -13,11 +13,11 @@
 
 | Platform | File |
 |---|---|
-| **macOS — Apple Silicon** | [`CodeTrellis-0.1.11-arm64.dmg`](https://github.com/lionroseway/codetrellis-releases/releases/latest/download/CodeTrellis-0.1.11-arm64.dmg) — signed + notarized |
-| **macOS — Intel** | [`CodeTrellis-0.1.11-x64.dmg`](https://github.com/lionroseway/codetrellis-releases/releases/latest/download/CodeTrellis-0.1.11-x64.dmg) — signed + notarized |
-| **Windows — installer** | [`CodeTrellis-Setup-0.1.11.exe`](https://github.com/lionroseway/codetrellis-releases/releases/latest/download/CodeTrellis-Setup-0.1.11.exe) |
-| **Windows — portable** | [`CodeTrellis-Portable-0.1.11.exe`](https://github.com/lionroseway/codetrellis-releases/releases/latest/download/CodeTrellis-Portable-0.1.11.exe) |
-| **Linux — x64** | [`CodeTrellis-0.1.11.AppImage`](https://github.com/lionroseway/codetrellis-releases/releases/latest/download/CodeTrellis-0.1.11.AppImage) |
+| **macOS — Apple Silicon** | [`CodeTrellis-0.1.12-arm64.dmg`](https://github.com/lionroseway/codetrellis-releases/releases/latest/download/CodeTrellis-0.1.12-arm64.dmg) — signed + notarized |
+| **macOS — Intel** | [`CodeTrellis-0.1.12-x64.dmg`](https://github.com/lionroseway/codetrellis-releases/releases/latest/download/CodeTrellis-0.1.12-x64.dmg) — signed + notarized |
+| **Windows — installer** | [`CodeTrellis-Setup-0.1.12.exe`](https://github.com/lionroseway/codetrellis-releases/releases/latest/download/CodeTrellis-Setup-0.1.12.exe) |
+| **Windows — portable** | [`CodeTrellis-Portable-0.1.12.exe`](https://github.com/lionroseway/codetrellis-releases/releases/latest/download/CodeTrellis-Portable-0.1.12.exe) |
+| **Linux — x64** | [`CodeTrellis-0.1.12.AppImage`](https://github.com/lionroseway/codetrellis-releases/releases/latest/download/CodeTrellis-0.1.12.AppImage) |
 
 All builds + release notes live on the **[Releases page →](https://github.com/lionroseway/codetrellis-releases/releases/latest)**
 
@@ -28,7 +28,7 @@ All builds + release notes live on the **[Releases page →](https://github.com/
   xattr -cr /Applications/CodeTrellis.app
   ```
 - **Windows** — the installer isn't code-signed yet, so SmartScreen may warn once — click **More info** → **Run anyway**.
-- **Linux** — `chmod +x CodeTrellis-0.1.11.AppImage && ./CodeTrellis-0.1.11.AppImage`. Works on Debian, Ubuntu, Fedora, RHEL, Arch — no install needed.
+- **Linux** — `chmod +x CodeTrellis-0.1.12.AppImage && ./CodeTrellis-0.1.12.AppImage`. Works on Debian, Ubuntu, Fedora, RHEL, Arch — no install needed.
 
 ### Linux AppImage on Ubuntu 24.04+
 
