@@ -5,7 +5,7 @@
 
 [![Latest release](https://img.shields.io/github/v/release/lionroseway/codetrellis-releases?label=latest&color=blue)](https://github.com/lionroseway/codetrellis-releases/releases/latest)
 [![License](https://img.shields.io/badge/license-Apache%202.0-green)](LICENSE)
-[![Source](https://img.shields.io/badge/source-private%20%28for%20now%29-lightgrey)](#source)
+[![Source](https://img.shields.io/badge/source-open-brightgreen)](https://github.com/lionroseway/codetrellis)
 
 ---
 
@@ -45,22 +45,30 @@ All builds + release notes live on the **[Releases page →](https://github.com/
 - **Android** — the APK isn't from the Play Store (Play listing is in progress), so when you open it, allow **"Install unknown apps"** for your browser/file manager, then install. It's signed with a stable key, so future versions upgrade in place.
 - **iOS** — distributed via TestFlight while we finish App Store review; you'll get an email invite with a code.
 
-### Linux AppImage on Ubuntu 24.04+
+### Linux: the AppImage runs without the Chromium sandbox
 
-Ubuntu 24.04 tightened AppArmor's unprivileged user-namespace policy, which breaks Chromium's setuid sandbox in AppImages. If you see:
+Worth knowing before you pick a Linux download, and an earlier version of
+this note undersold it by framing it as an Ubuntu 24.04 problem.
+
+**The AppImage runs with the Chromium sandbox off — on every distro, not
+just Ubuntu.** That is our own doing, not a fallback: from v0.1.4 the app
+passes `--no-sandbox` whenever it detects it is running from an AppImage,
+because AppArmor's unprivileged user-namespace policy on modern Linux
+breaks Chromium's setuid sandbox inside one. Without it you get:
 
 ```
 FATAL:setuid_sandbox_host.cc(...) The SUID sandbox helper binary
 was found, but is not configured correctly.
 ```
 
-…the workaround is to launch with `--no-sandbox`:
+It is the same trade Cursor, Obsidian and most other Electron AppImages
+make, and for a local tool loading its own bundled HTML the practical risk
+is low. But it is a real reduction in defence-in-depth, and you should know
+you are taking it.
 
-```bash
-./CodeTrellis-0.1.9.AppImage --no-sandbox
-```
-
-This is the same workaround Cursor, Obsidian, and most other Electron AppImages use on modern Linux. For a local dev tool loading your own bundled HTML, the practical risk is negligible. **From v0.1.4 onwards** the desktop app does this automatically when launched from an AppImage — so the workaround only applies to v0.1.0.
+**The `.deb` and `.rpm` keep the sandbox.** Where you have the choice —
+Debian, Ubuntu, Fedora, RHEL — prefer those. The AppImage is for distros
+where you don't.
 
 ---
 
@@ -97,7 +105,13 @@ codebase.
 
 - **Visualises your codebase** as a dependency graph — packages,
   files, and symbols (functions, classes, methods), with cross-system
-  edges where one service calls another over HTTP/SQL.
+  edges where one service calls another over HTTP/SQL. Eleven
+  languages on one canvas: TypeScript, JavaScript, Python, Go, Rust,
+  Java, Kotlin, Swift, C#, Ruby, PHP — plus your SQL schema.
+- **Reads as code, not only as a picture.** There's a mode where the
+  graph never mounts: your files, a diff editor, and the plan drawn
+  onto the code. Cheaper to render on a large repo, and more legible
+  if you think in files.
 - **Lets you write plans** that scale from a one-line "do this thing"
   to multi-phase migrations with spec docs, acceptance criteria,
   prerequisites, and templates. As simple or as complex as you want.
@@ -112,6 +126,14 @@ codebase.
 - **Surfaces drift** in real time — if the agent wrote a file that's
   not in the plan, or the plan said "create function X" and that
   function still doesn't exist, you see it.
+- **Proves what actually landed.** Compare any two points in the
+  project's history, check the diff against the plan that claimed it —
+  every item comes back landed, partly landed or untouched, files
+  nobody planned get called out, and the whole thing drafts your pull
+  request description.
+- **Comes with a phone.** The companion app pairs to the desktop by QR
+  over a peer-to-peer connection, so you can watch agents, browse
+  plans and drive terminals from your phone. No central server.
 
 ## How I actually use it
 
@@ -169,20 +191,29 @@ This is the part I want to be very direct about:
 
 ## Source
 
-The source repository is **currently private**. I'm collecting
-feedback before opening it up — bug reports, "this confused me"
-moments, missing use cases, all welcome. In an ideal world the
-source goes public sooner rather than later; the gate is just
-hardening the rough edges based on what people hit.
+**The source is open.** All of it — desktop app, mobile companion, MCP
+server, every parser — lives at
+[**lionroseway/codetrellis**](https://github.com/lionroseway/codetrellis)
+under Apache 2.0. Read it, fork it, build it yourself, send a patch.
 
-Things I'd especially like feedback on:
+This repo stays where the downloads live. That split is on purpose:
+distribution shouldn't depend on the source repo being reachable, so
+installers keep working regardless of what happens over there.
+
+| | |
+|---|---|
+| **Code, issues, pull requests** | [lionroseway/codetrellis](https://github.com/lionroseway/codetrellis) |
+| **Installers and release notes** | here |
+
+Feedback is still the most useful thing you can send:
 
 - Are there workflows you tried that didn't fit cleanly?
 - Anything that crashed or behaved weirdly?
 - Plan templates you wish were built in?
 - Features you assumed would be there and weren't?
 
-[Open an issue here](https://github.com/lionroseway/codetrellis-releases/issues/new) — even a one-liner helps shape the public release.
+[Open an issue](https://github.com/lionroseway/codetrellis/issues/new) on the
+source repo — even a one-liner helps.
 
 ## License
 
