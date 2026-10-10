@@ -15,11 +15,11 @@
 
 | Platform | Download |
 |---|---|
-| **macOS — Apple Silicon** | [`CodeTrellis-0.2.0-arm64.dmg`](https://github.com/lionroseway/codetrellis-releases/releases/latest/download/CodeTrellis-0.2.0-arm64.dmg) — signed + notarized |
-| **macOS — Intel** | [`CodeTrellis-0.2.0-x64.dmg`](https://github.com/lionroseway/codetrellis-releases/releases/latest/download/CodeTrellis-0.2.0-x64.dmg) — signed + notarized |
-| **Windows — x64** | [`Setup .exe`](https://github.com/lionroseway/codetrellis-releases/releases/latest/download/CodeTrellis-Setup-0.2.0.exe) (installer) · [`Portable .exe`](https://github.com/lionroseway/codetrellis-releases/releases/latest/download/CodeTrellis-Portable-0.2.0.exe) |
-| **Linux — x64** | [`.AppImage`](https://github.com/lionroseway/codetrellis-releases/releases/latest/download/CodeTrellis-0.2.0-x86_64.AppImage) · [`.deb`](https://github.com/lionroseway/codetrellis-releases/releases/latest/download/codetrellis_0.2.0_amd64.deb) · [`.rpm`](https://github.com/lionroseway/codetrellis-releases/releases/latest/download/codetrellis-0.2.0.x86_64.rpm) |
-| **Linux — arm64** | [`.AppImage`](https://github.com/lionroseway/codetrellis-releases/releases/latest/download/CodeTrellis-0.2.0-arm64.AppImage) · [`.deb`](https://github.com/lionroseway/codetrellis-releases/releases/latest/download/codetrellis_0.2.0_arm64.deb) · [`.rpm`](https://github.com/lionroseway/codetrellis-releases/releases/latest/download/codetrellis-0.2.0.aarch64.rpm) |
+| **macOS — Apple Silicon** | [`CodeTrellis-0.3.0-arm64.dmg`](https://github.com/lionroseway/codetrellis-releases/releases/latest/download/CodeTrellis-0.3.0-arm64.dmg) — signed + notarized |
+| **macOS — Intel** | [`CodeTrellis-0.3.0-x64.dmg`](https://github.com/lionroseway/codetrellis-releases/releases/latest/download/CodeTrellis-0.3.0-x64.dmg) — signed + notarized |
+| **Windows — x64** | [`Setup .exe`](https://github.com/lionroseway/codetrellis-releases/releases/latest/download/CodeTrellis-Setup-0.3.0.exe) (installer) · [`Portable .exe`](https://github.com/lionroseway/codetrellis-releases/releases/latest/download/CodeTrellis-Portable-0.3.0.exe) |
+| **Linux — x64** | [`.AppImage`](https://github.com/lionroseway/codetrellis-releases/releases/latest/download/CodeTrellis-0.3.0-x86_64.AppImage) · [`.deb`](https://github.com/lionroseway/codetrellis-releases/releases/latest/download/codetrellis_0.3.0_amd64.deb) · [`.rpm`](https://github.com/lionroseway/codetrellis-releases/releases/latest/download/codetrellis-0.3.0.x86_64.rpm) |
+| **Linux — arm64** | [`.AppImage`](https://github.com/lionroseway/codetrellis-releases/releases/latest/download/CodeTrellis-0.3.0-arm64.AppImage) · [`.deb`](https://github.com/lionroseway/codetrellis-releases/releases/latest/download/codetrellis_0.3.0_arm64.deb) · [`.rpm`](https://github.com/lionroseway/codetrellis-releases/releases/latest/download/codetrellis-0.3.0.aarch64.rpm) |
 
 ### Mobile companion
 
@@ -27,8 +27,12 @@ The companion lets you watch agents, browse plans, drive terminals, and explore 
 
 | Platform | Download |
 |---|---|
-| **Android** | [`CodeTrellis-Companion-0.1.18.apk`](https://github.com/lionroseway/codetrellis-releases/releases/download/v0.1.18/CodeTrellis-Companion-0.1.18.apk) — sideload (see note below). Works with desktop 0.1.18 to 0.2.0 — the peer protocol is the same. |
+| **Android** | [`CodeTrellis-Companion-0.3.0.apk`](https://github.com/lionroseway/codetrellis-releases/releases/latest/download/CodeTrellis-Companion-0.3.0.apk) — sideload (see note below). Made for desktop 0.3.0; pairing is unchanged since 0.1.14, so no re-pairing. |
 | **iOS** | **TestFlight** — currently invite-only; [open an issue](https://github.com/lionroseway/codetrellis-releases/issues/new) to request access |
+
+### Command line
+
+The `codetrellis` CLI, for CI, servers and agent sessions, is on npm at the same version: `npx codetrellis` or `npm i -g codetrellis`. The desktop app also carries it and offers to add it to your PATH.
 
 All builds + release notes live on the **[Releases page →](https://github.com/lionroseway/codetrellis-releases/releases/latest)**
 
@@ -39,9 +43,9 @@ All builds + release notes live on the **[Releases page →](https://github.com/
   xattr -cr /Applications/CodeTrellis.app
   ```
 - **Windows** — the installer isn't code-signed yet, so SmartScreen may warn once — click **More info** → **Run anyway**.
-- **Linux (AppImage)** — `chmod +x CodeTrellis-0.2.0*.AppImage && ./CodeTrellis-0.2.0*.AppImage`. Portable, no install. Pick the file matching your CPU (`-arm64` for ARM, otherwise x64).
-- **Linux (.deb)** — Debian / Ubuntu: `sudo apt install ./codetrellis_0.2.0_*.deb`.
-- **Linux (.rpm)** — Fedora / RHEL: `sudo dnf install ./codetrellis-0.2.0.*.rpm`.
+- **Linux (AppImage)** — `chmod +x CodeTrellis-0.3.0*.AppImage && ./CodeTrellis-0.3.0*.AppImage`. Portable, no install. Pick the file matching your CPU (`-arm64` for ARM, otherwise x64).
+- **Linux (.deb)** — Debian / Ubuntu: `sudo apt install ./codetrellis_0.3.0_*.deb`.
+- **Linux (.rpm)** — Fedora / RHEL: `sudo dnf install ./codetrellis-0.3.0.*.rpm`.
 - **Android** — the APK isn't from the Play Store (Play listing is in progress), so when you open it, allow **"Install unknown apps"** for your browser/file manager, then install. It's signed with a stable key, so future versions upgrade in place.
 - **iOS** — distributed via TestFlight while we finish App Store review; you'll get an email invite with a code.
 
